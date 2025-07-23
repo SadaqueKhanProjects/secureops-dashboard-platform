@@ -1,8 +1,7 @@
 server: 
   port: 8080
 
-  spring: 
-    data:
-      mongodb:
-        database: secureops
-        uri: mongodb://localhost:27017/secureops
+spring:
+  data:
+    mongodb:
+      uri: mongodb://mongo:27017/secureops

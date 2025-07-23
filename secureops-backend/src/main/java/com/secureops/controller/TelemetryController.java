@@ -2,6 +2,9 @@ package com.secureops.controller;
 
 import com.secureops.model.TelemetryFeed;
 import com.secureops.service.TelemetryService;
+
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,7 +26,8 @@ public class TelemetryController {
     }
 
     @PostMapping
-    public TelemetryFeed addFeed(@RequestBody TelemetryFeed feed) {
+    public TelemetryFeed addFeed(@Valid @RequestBody TelemetryFeed feed) {
+        System.out.println("🚀 Received telemetry: " + feed.getDroneId());
         return service.save(feed);
     }
 }
